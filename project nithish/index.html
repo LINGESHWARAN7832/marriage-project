@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MADHAN & NIRMANI - A Traditional Tamil Wedding</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Background Music Audio (Placeholder: Nadaswaram & Thavil vibe) -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Global Falling Petals Container -->
+    <div id="petals-container"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">M & N </div>
+        <div class="nav-controls">
+            <button id="musicToggle" class="icon-btn"><i class="fas fa-volume-mute"></i></button>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+
+        <!-- Hanging Lanterns -->
+        <div class="lantern lantern-left">
+            <img src="lanterns.png" alt="Hanging Lantern">
+        </div>
+        <div class="lantern lantern-right">
+            <img src="lanterns.png" alt="Hanging Lantern">
+        </div>
+
+        <!-- Hanging Diyas -->
+        <div class="diya diya-left">
+            <img src="diyas.png" alt="Hanging Diya">
+        </div>
+        <div class="diya diya-right">
+            <img src="diyas.png" alt="Hanging Diya">
+        </div>
+
+        <!-- Animated Temple Image with Parallax -->
+        <div class="temple-animation parallax-temple">
+            <img src="temple-real.png" alt="Temple" class="temple-img">
+        </div>
+
+        <!-- Musical Instruments Decoration -->
+        <div class="instruments-decor reveal">
+            <img src="real-instruments.png" alt="Traditional Instruments" class="instrument parallax-instrument">
+        </div>
+
+        <!-- Right Side Thavil Decoration -->
+        <div class="thavil-decor reveal">
+            <img src="thavil-player.png" alt="Thavil Player" class="instrument parallax-instrument">
+        </div>
+
+        <div class="hero-content reveal">
+            <p class="tagline">VANAKKAM • WE ARE GETTING MARRIED</p>
+            <h1>MADHAN & NIRMANI</h1>
+            <p class="date">ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤMAY 28 2026 • ARCOT</p>
+
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="section bg-light kolam-bg">
+        <!-- Left Side Floral Decor -->
+        <div class="story-floral-left">
+            <img src="story-flower.png" alt="Floral Decoration">
+        </div>
+
+        <!-- Right Side Floral Decor -->
+        <div class="story-floral-right">
+            <img src="story-flower.png" alt="Floral Decoration Right">
+        </div>
+
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Our Story</h2>
+                <div class="divider">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1892/1892627.png" alt="Leaf"
+                        class="leaf-divider-icon"
+                        style="width: 24px; opacity: 0.8; filter: hue-rotate(90deg) brightness(0.8);">
+                    <i class="fas fa-om motif"></i>
+                    <img src="https://cdn-icons-png.flaticon.com/512/1892/1892627.png" alt="Leaf"
+                        class="leaf-divider-icon"
+                        style="width: 24px; opacity: 0.8; filter: hue-rotate(90deg) brightness(0.8); transform: scaleX(-1);">
+                </div>
+                <p>A match made in heaven</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Penn Paarthal</h3>
+                        <p class="timeline-date">March 2024</p>
+                        <p>The traditional families meeting. A tray of fruits, a cup of filter coffee, and a few shy
+                            glances were all it took to know we were meant for each other.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>The Connection</h3>
+                        <p class="timeline-date">April 2024</p>
+                        <p>Long phone calls and evening walks. We discovered our shared love for filter
+                            kaapi, Ilaiyaraaja melodies, and big dreams.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Nichayathartham</h3>
+                        <p class="timeline-date">SEP 14 2025</p>
+                        <p>With the blessings of our elders, we exchanged plates and rings, officially sealing our
+                            promise to a lifetime of togetherness.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wedding Schedule Section -->
+    <section id="schedule" class="section">
+        <!-- Single Floral Decor Bottom to Top -->
+        <div class="schedule-floral">
+            <img src="right-flower.png" alt="Floral Decoration">
+        </div>
+
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Wedding Celebrations</h2>
+                <div class="divider">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1892/1892627.png" alt="Leaf"
+                        class="leaf-divider-icon"
+                        style="width: 24px; opacity: 0.8; filter: hue-rotate(90deg) brightness(0.8);">
+                    <i class="fas fa-om motif"></i>
+                    <img src="https://cdn-icons-png.flaticon.com/512/1892/1892627.png" alt="Leaf"
+                        class="leaf-divider-icon"
+                        style="width: 24px; opacity: 0.8; filter: hue-rotate(90deg) brightness(0.8); transform: scaleX(-1);">
+                </div>
+                <p>Join us in celebrating our auspicious days</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card reveal">
+                    <div class="card-icon"><i class="fas fa-spa"></i></div>
+                    <h3>Nalangu & Mehendi</h3>
+                    <p class="time">Friday, Oct 23 • 4:00 PM</p>
+                    <p class="desc">A fun-filled evening of applying turmeric, singing traditional songs, and intricate
+                        henna designs.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"><i class="fas fa-fire"></i></div>
+                    <h3>Muhurtham</h3>
+                    <p class="time">Saturday, Oct 24 • 9:00 AM</p>
+                    <p class="desc">The sacred knot (Mangalya Dharanam) will be tied around the holy fire amidst the
+                        chanting of mantras and blessings.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"><i class="fas fa-glass-cheers"></i></div>
+                    <h3>Reception</h3>
+                    <p class="time">Saturday, Oct 24 • 7:00 PM</p>
+                    <p class="desc">A grand evening of music, feast, and celebration to thank everyone for their
+                        blessings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="section bg-light">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Captured Moments</h2>
+                <div class="divider">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1892/1892627.png" alt="Leaf"
+                        class="leaf-divider-icon"
+                        style="width: 24px; opacity: 0.8; filter: hue-rotate(90deg) brightness(0.8);">
+                    <i class="fas fa-om motif"></i>
+                    <img src="https://cdn-icons-png.flaticon.com/512/1892/1892627.png" alt="Leaf"
+                        class="leaf-divider-icon"
+                        style="width: 24px; opacity: 0.8; filter: hue-rotate(90deg) brightness(0.8); transform: scaleX(-1);">
+                </div>
+                <p>Glimpses of our love</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item reveal"><img
+                        src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Couple image 1"></div>
+                <div class="gallery-item reveal"><img
+                        src="https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Couple image 2"></div>
+                <div class="gallery-item reveal"><img
+                        src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Couple image 3"></div>
+                <div class="gallery-item reveal"><img
+                        src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Couple image 4"></div>
+                <div class="gallery-item reveal"><img
+                        src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Couple image 5"></div>
+                <div class="gallery-item reveal"><img
+                        src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Couple image 6"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="travel" class="section bg-light kolam-bg">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Venue & Travel</h2>
+                <div class="divider">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1892/1892627.png" alt="Leaf"
+                        class="leaf-divider-icon"
+                        style="width: 24px; opacity: 0.8; filter: hue-rotate(90deg) brightness(0.8);">
+                    <i class="fas fa-om motif"></i>
+                    <img src="https://cdn-icons-png.flaticon.com/512/1892/1892627.png" alt="Leaf"
+                        class="leaf-divider-icon"
+                        style="width: 24px; opacity: 0.8; filter: hue-rotate(90deg) brightness(0.8); transform: scaleX(-1);">
+                </div>
+                <p>How to reach our grand celebration</p>
+            </div>
+
+            <div class="travel-content">
+                <div class="venue-details reveal">
+                    <h3>Sri Kalyana Mandapam</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Temple Road, Mylapore, Chennai</p>
+                    <p>We have arranged comfortable stay for our out-of-town guests. Please let us know in advance so we
+                        can assist you with your travel and accommodation.</p>
+                    <a href="#" class="btn btn-outline">View on Map</a>
+                </div>
+                <div class="map-container reveal">
+                    <!-- Placeholder map using an iframe -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.634027732007!2d80.26760451482276!3d13.033320690815456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267cd322b7c6d%3A0x6a00a120019c48fc!2sMylapore%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel & Accommodation -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h2 class="footer-logo">M & N </h2>
+                <p>Thank you for being a part of our beautiful beginning.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p class="copyright">&copy; @ NITHISH. Nandri.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox for Gallery -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

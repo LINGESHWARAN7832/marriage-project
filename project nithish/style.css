@@ -1,0 +1,1132 @@
+/* ==========================================================================
+   CSS Variables & Global Styles
+   ========================================================================== */
+   :root {
+    /* Color Palette: Gold, Blush Pink, White + Deep Maroon for Tamil Touch */
+    --primary-color: #D4AF37;      /* Gold */
+    --secondary-color: #F8E5E5;    /* Blush Pink */
+    --accent-color: #800000;       /* Maroon / Kumkum */
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --bg-light: #fffafb;
+    --bg-white: #ffffff;
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --transition: all 0.4s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: var(--bg-white);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+/* ==========================================================================
+   Typography & Reusable Components
+   ========================================================================== */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title p {
+    font-style: italic;
+    color: #666;
+    margin-top: 10px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    height: 1px;
+    width: 60px;
+    background-color: var(--primary-color);
+    margin: 0 15px;
+}
+
+.motif {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.light-text h2 {
+    color: var(--text-light);
+}
+
+.light-text p {
+    color: #eee;
+}
+
+.divider-light::before, .divider-light::after {
+    background-color: var(--text-light);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), #E8C35A);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #E8C35A, var(--primary-color));
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* Scroll Reveal Class */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+nav.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 5%;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+nav.scrolled .logo {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: var(--transition);
+}
+
+nav.scrolled .nav-links li a {
+    color: var(--text-dark);
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+nav.scrolled .icon-btn {
+    color: var(--accent-color);
+}
+
+.hamburger {
+    display: none;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+nav.scrolled .hamburger {
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1544078755-9b2f4a4eb23d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-related;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(128,0,0,0.6));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--text-light);
+}
+
+.hero-content .tagline {
+    font-size: 1rem;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #FFFFFF; /* Pure white */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.top-tagline {
+    position: absolute;
+    top: 10%; /* Center top of the entire page */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.bottom-btn {
+    position: absolute;
+    bottom: 40px; /* Right at the bottom of the temple */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: fadeInDown 1.5s ease;
+}
+
+.hero-content .date {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* Temple Animation in Hero */
+.temple-animation {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1050px; /* Increased from 900px */
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    animation: templeEntrance 1.5s ease-out forwards;
+}
+
+.temple-img {
+    width: 100%;
+    height: auto;
+    max-height: 650px; /* Increased from 550px */
+    object-fit: contain;
+    /* Soft golden glow around the temple edges */
+    filter: drop-shadow(0 0 35px rgba(212, 175, 55, 0.8)) drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+}
+
+@keyframes templeEntrance {
+    0% { opacity: 0; transform: translate(-50%, 80px); }
+    100% { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* Mandapam Entrance / Banana Trees Arch */
+.mandapam-entrance {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.mandap-arch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* Stretches the arch to fit the screen */
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.4));
+    animation: gentleSway 6s ease-in-out infinite alternate;
+    transform-origin: top center;
+}
+
+@keyframes gentleSway {
+    0% { transform: scale(1.02) translateY(0); }
+    100% { transform: scale(1.02) translateY(5px); }
+}
+
+/* Hanging Lanterns Decoration */
+.lantern {
+    position: absolute;
+    top: -5%; /* Hides the very top of the string */
+    z-index: 4;
+    width: 250px;
+    max-width: 25vw;
+    pointer-events: none;
+    transform-origin: top center;
+    animation: swingLantern 5s ease-in-out infinite alternate;
+}
+
+.lantern img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 15px 25px rgba(212, 175, 55, 0.5));
+}
+
+.lantern-left {
+    left: 5%;
+}
+
+.lantern-right {
+    right: 5%;
+    animation-delay: 1.5s; /* Offsets the swing animation */
+}
+
+.lantern-right img {
+    transform: scaleX(-1); /* Flips the lantern image horizontally for symmetry */
+}
+
+@keyframes swingLantern {
+    0% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+
+/* Hanging Diyas Decoration */
+.diya {
+    position: absolute;
+    top: -5%; /* Hides the very top of the string */
+    z-index: 3;
+    width: 220px;
+    max-width: 22vw;
+    pointer-events: none;
+    transform-origin: top center;
+    animation: swingDiya 6s ease-in-out infinite alternate;
+}
+
+.diya img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 15px 25px rgba(255, 100, 50, 0.4));
+}
+
+.diya-left {
+    left: 18%; /* Placed slightly inside the lanterns */
+    animation-delay: 0.8s;
+}
+
+.diya-right {
+    right: 18%;
+    animation-delay: 2.2s;
+    transform: scaleX(-1); /* Flips for symmetry */
+}
+
+@keyframes swingDiya {
+    0% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+/* Musical Instruments Decoration */
+.instruments-decor {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 3;
+    pointer-events: none;
+    animation: floatInstrument 4s ease-in-out infinite alternate;
+}
+
+.thavil-decor {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: 3;
+    pointer-events: none;
+    animation: floatInstrument 4.5s ease-in-out infinite alternate-reverse;
+}
+
+.instrument {
+    width: 300px;
+    height: auto;
+    filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.4));
+    opacity: 0.9;
+}
+
+@keyframes floatInstrument {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+/* Floating Flower Petals and Leaves */
+#petals-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.petal {
+    position: absolute;
+    background: #fff;
+    border-radius: 150% 0 150% 0;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    opacity: 0.8;
+    animation: fall linear forwards;
+}
+
+.leaf {
+    position: absolute;
+    background: #6b8e23; /* Olive green */
+    border-radius: 0 100% 0 100%;
+    box-shadow: 0 0 5px rgba(107, 142, 35, 0.5);
+    opacity: 0.8;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Hanging Bells Animation */
+.hanging-bells {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    z-index: 2;
+}
+
+.bell {
+    color: var(--primary-color);
+    font-size: 2rem;
+    position: relative;
+    top: -20px;
+    animation: swing ease-in-out infinite alternate;
+    transform-origin: top center;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.5));
+}
+
+.bell::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    width: 2px;
+    height: 50px;
+    background: var(--primary-color);
+    transform: translateX(-50%);
+}
+
+.bell:nth-child(1) { animation-duration: 2.5s; animation-delay: 0.1s; }
+.bell:nth-child(2) { animation-duration: 3s; animation-delay: 0.5s; top: 20px; }
+.bell:nth-child(3) { animation-duration: 2.8s; animation-delay: 0.2s; top: 40px; }
+.bell:nth-child(4) { animation-duration: 3.2s; animation-delay: 0.6s; top: 20px; }
+.bell:nth-child(5) { animation-duration: 2.6s; animation-delay: 0.3s; }
+
+@keyframes swing {
+    0% { transform: rotate(15deg); }
+    100% { transform: rotate(-15deg); }
+}
+
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.mouse {
+    width: 25px;
+    height: 40px;
+    border: 2px solid var(--text-light);
+    border-radius: 20px;
+    position: relative;
+}
+
+.mouse::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background-color: var(--text-light);
+    border-radius: 2px;
+    animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+    0% { opacity: 1; top: 8px; }
+    100% { opacity: 0; top: 24px; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Tamil Motif Backgrounds
+   ========================================================================== */
+.kolam-bg {
+    position: relative;
+    background-color: var(--bg-light);
+}
+
+.kolam-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, var(--primary-color) 1px, transparent 1px),
+                      radial-gradient(circle, var(--primary-color) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+/* Story Section Floral Decor */
+.story-floral-left {
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 80%; /* Takes up most of the section height */
+    z-index: 0; /* Behind content */
+    pointer-events: none;
+    opacity: 0.85;
+    transform-origin: left center;
+    animation: swayFloral 8s ease-in-out infinite alternate;
+}
+
+.story-floral-left img {
+    height: 100%;
+    width: auto;
+    filter: drop-shadow(5px 10px 15px rgba(0,0,0,0.15));
+}
+
+@keyframes swayFloral {
+    0% { transform: rotate(-1deg) scale(1); }
+    100% { transform: rotate(2deg) scale(1.02); }
+}
+
+.story-floral-right {
+    position: absolute;
+    right: 0;
+    top: 10%;
+    height: 80%; /* Takes up most of the section height */
+    z-index: 0; /* Behind content */
+    pointer-events: none;
+    opacity: 0.85;
+    transform-origin: right center;
+    animation: swayFloralRight 8s ease-in-out infinite alternate;
+}
+
+.story-floral-right img {
+    height: 100%;
+    width: auto;
+    filter: drop-shadow(-5px 10px 15px rgba(0,0,0,0.15));
+    transform: scaleX(-1);
+}
+
+@keyframes swayFloralRight {
+    0% { transform: rotate(1deg) scale(1); }
+    100% { transform: rotate(-2deg) scale(1.02); }
+}
+
+.kolam-bg .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   Our Story (Timeline)
+   ========================================================================== */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: var(--bg-white);
+    border: 4px solid var(--primary-color);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: var(--bg-white);
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 3px solid var(--accent-color);
+}
+
+.timeline-content h3 {
+    color: var(--accent-color);
+}
+
+.timeline-date {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Schedule (Cards)
+   ========================================================================== */
+#schedule {
+    background-image: url('celebration-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+#schedule::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.85); /* Overlay to ensure content is readable */
+    z-index: 0;
+}
+
+#schedule .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Schedule Section Floral Decor */
+.schedule-floral {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.85;
+    transform-origin: left bottom;
+    animation: swayFloral 8s ease-in-out infinite alternate;
+}
+
+.schedule-floral img {
+    height: 100%;
+    width: auto;
+    filter: drop-shadow(5px 10px 15px rgba(0,0,0,0.15));
+}
+
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--bg-white);
+    padding: 40px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(135deg, var(--secondary-color), transparent);
+    transition: var(--transition);
+    z-index: 0;
+}
+
+.card:hover::before {
+    height: 100%;
+}
+
+.card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.card .time {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   Photo Gallery
+   ========================================================================== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item::after {
+    content: '\f002';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(128, 0, 0, 0.4);
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    animation: zoom 0.6s;
+    border: 5px solid var(--primary-color);
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-lightbox:hover,
+.close-lightbox:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   Travel Section
+   ========================================================================== */
+.travel-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+}
+
+.venue-details {
+    flex: 1;
+    min-width: 300px;
+}
+
+.venue-details h3 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.venue-details p {
+    margin-bottom: 15px;
+}
+
+.venue-details .fa-map-marker-alt {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.map-container {
+    flex: 1;
+    min-width: 300px;
+    height: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 4px solid var(--primary-color);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 60px 0 30px;
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    margin: 20px 0;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: rgba(255,255,255,0.1);
+    color: var(--primary-color);
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 30px;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--bg-white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .nav-links li a {
+        color: var(--text-dark);
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .timeline::after {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .timeline-item:nth-child(even) {
+        left: 0%;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-dot,
+    .timeline-item:nth-child(odd) .timeline-dot {
+        left: 19px;
+    }
+
+    .temple-animation {
+        height: 150px;
+    }
+    .bell {
+        font-size: 1.5rem;
+    }
+    .bell::before {
+        height: 30px;
+        top: -30px;
+    }
+}
